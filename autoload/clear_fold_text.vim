@@ -39,8 +39,8 @@ function! clear_fold_text#getText() " {{{
 	elseif line =~ '^\s*.\?\s*$'
 		let line = ' folded'
 		let l:prefix = '└▶ '
-	elseif line =~ '\{\{\{$'
-		let line = ': ' . substitute(line, '^"*\s*\(.*\)\{\{\{$', '\1', 1)
+	elseif line =~ '{{{$'
+		let line = ': ' . substitute(line, '^"*\s*\(.*\){{{$', '\1', 1)
 	else
 		let line = ': ' . substitute(line, '^\s*', '', 1)
 	endif
