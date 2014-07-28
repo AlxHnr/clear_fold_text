@@ -22,7 +22,7 @@
 
 " Escapes all magic Regex characters in 'pat' and returns it.
 function! s:regex_escape(pat) " {{{
-	return escape(a:pat, '^.*?[+-]{=/&%}$')
+	return escape(a:pat, '^(.*?"[+-~]<@!:>|{=\/&%@#})$' . "'")
 endfunction " }}}
 
 " This function strips out all comment strings and markers from 'line'.
